@@ -4,11 +4,11 @@ function ContactForm() {
   const [form, setForm] = useState({ nombre: "", email: "", mensaje: "" })
   const [enviado, setEnviado] = useState(false)
 
-  function handleChange(e) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  function handleSubmit(e) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     if (!form.nombre || !form.email || !form.mensaje) return
     setEnviado(true)
